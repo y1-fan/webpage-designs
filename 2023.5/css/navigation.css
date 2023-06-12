@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500&family=Poppins:wght@500&display=swap');
+
+.navigation {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 2em;
+    color: transparent;
+    font-weight: 500;
+    transition: .5s;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+#nav1 {z-index: 101;}
+#nav2 {z-index: 102;}
+#nav3 {z-index: 103;}
+#nav4 {z-index: 104;}
+#nav5 {z-index: 105;}
+
+.navFather {
+    margin: 50px 100px 50px;
+    display: flex;
+    justify-content: space-between;
+}

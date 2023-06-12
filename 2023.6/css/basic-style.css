@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700&family=Poppins:wght@600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    background: rgba(45,45,45);
+}
+
+#head {
+    padding-top: 50px;
+    color: white;
+    font-size: clamp(2em, 4vw, 3.5em);
+    font-family: 'Poppins', sans-serif;
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none;
+    transition: 0.5s;
+}
+
+#instrument {
+    font-family: 'Noto Sans SC', sans-serif;
+    -webkit-user-select: none;
+    user-select: none;
+    font-size: clamp(1em, 2.5vw, 2.5em);
+    color: transparent;
+    transition: 0.5s;
+    margin-bottom: 50px;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 85%;
+    height: auto;
+    margin: 20px 20px;
+    max-width: 600px;
+    z-index: 1;
+}
+
+#container .navArea {
+    width: 40%;
+    padding-top: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2.5% 2.5%;
+    transition: 0.5s;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.3);
+    
+    transform: scale(1);
+}
+
+
+#text1:hover, #text2:hover,  #text3:hover,  #text4:hover{
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 10px,
+                0 0 30px,
+                0 0 50px;
+    transform: scale(1.1);
+}
+
+#text1::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    filter: blur(20px);
+    opacity: 0;
+    transition: 0.5s;
+    background: linear-gradient(320deg, rgba(255, 100, 0), rgba(255, 255, 0)); 
+}
+
+#text1:hover::before, #text2:hover::before, #text3:hover::before, #text4:hover::before {
+    opacity: 1;
+}
+
+#text2::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    filter: blur(20px);
+    opacity: 0;
+    transition: 0.5s;
+    background: linear-gradient(320deg, rgba(255, 255, 0), rgba(0, 200, 0)); 
+}
+
+#text3::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    filter: blur(20px);
+    opacity: 0;
+    transition: 0.5s;
+    background: linear-gradient(320deg, rgba(0, 200, 0), rgba(53, 164, 255)); 
+}
+
+
+#text4::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    filter: blur(20px);
+    opacity: 0;
+    transition: 0.5s;
+    background: linear-gradient(320deg, rgba(53, 164, 255), rgba(136, 25, 255)); 
+}
+
+
+.animeBackground {
+    width: 100%;
+    height: 100%;
+    z-index: -100;
+    overflow: hidden;
+    position:fixed;
+    top: 0;
+}
+
+.palyground {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.bubbles {
+    position: relative;
+    display: flex;
+    min-width: max-content;
+}
+
+.bubbles .color1 {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    margin: 0 4px;
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.3), 0 0 50px rgba(255, 255, 255, 0.5), 0 0 100px rgba(255, 255, 255, 0.5);
+    animation: ascend 20s linear infinite;
+    animation-duration: calc(787s / var(--i));
+    transition: 0.5s;
+}
+
+.bubbles .color2 {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    margin: 0 4px;
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.3), 0 0 50px rgba(255, 255, 255, 0.5), 0 0 100px rgba(255, 255, 255, 0.5);
+    animation: ascend 20s linear infinite;
+    animation-duration: calc(787s / var(--i));
+    transition: 0.5s;
+}
+
+@keyframes ascend {
+    from {
+        transform: translateY(99vh) scale(0);
+    }
+    to {
+        transform: translateY(-20vh) scale(1);
+    }
+}

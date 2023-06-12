@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@200&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    z-index: 99;
+    background-color: #4b4353;;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+    min-width: 700px;
+}
+
+body {
+    min-width: 700px;
+    margin-left: 200px;
+    margin-right: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("../img/background.jpg") no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    background-color: gray;
+}
+
+.navigation a {
+    position: relative;
+    font-size: 1.1em;
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 40px;
+}
+
+.navigation a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 2px;
+    background: white;
+    border-radius: 3px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .5s;
+}
+
+.navigation a:hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+#this {
+    font-weight: 1000;
+}
+
+.article {
+    padding-top: 150px;
+    padding-left: 100px;
+    padding-right: 100px;
+    background-color: white;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    height: 1500px;
+    width: 100%;
+}
+
+.titleInfomation {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-bottom: 10px;
+    border-bottom: solid #4b4353;
+}
+
+.title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 3em;
+}
+
+.author {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 1.5em;
+}
+
+.cover {
+    position: relative;
+    margin-top: 50px;
+    width: 300px;
+}
+
+.quote {
+    margin-top: 30px;
+    font-size: 1em;
+    top: 275px;
+    left: 620px;
+    padding-left: 15px;
+    border-left: solid darkgray 5px;
+    text-indent: 2em;
+}
