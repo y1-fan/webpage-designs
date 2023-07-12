@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500&display=swap');
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+    
+      html {
+        height: 100%;
+      }
+    
+      body {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        height: 100%;
+        align-items: center;
+        background: rgba(45,45,45);
+        overflow-x: hidden;
+        user-select: none;
+      }
+
+      .logo {
+        position: absolute;
+        top: 50px;
+        left: 10%;
+        width: 50px;
+        z-index: 99;
+    }
+      .hello-container {
+        width: 100%;
+        height: 500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .road {
+        position: fixed;
+        background: url("wesklake.png") center no-repeat;
+        opacity: 0.3;
+        user-select: none;
+        background-size: 2000px;
+        top: 0px;
+        width: 100%;
+        height: 1000px;
+        z-index: -99;
+      }
+      .hello {
+        opacity: 0;
+        position: absolute;
+        color: white;
+        font-weight: 150;
+        font-size: clamp(2em, 2vw, 3em);
+        user-select: none;
+      }
+      .main-content {
+        position: absolute;
+        font-family: 'Noto Serif SC', serif;
+        font-size: clamp(2em, 2vw, 3em);
+        width: 100%;
+        top: 1000px;
+        padding: 5% 20%;
+        color: white;
+      }
+    </style>
+    <title>西湖文理学社</title>
+  </head>
+
+  <body>
+    <img src="logo.png" alt="西湖文理学社" class="logo">
+    <div class="road"></div>
+    <div class="hello-container">
+        <h1 class="hello">你好</h1>
+        <h1 class="hello">Hello</h1>
+        <h1 class="hello">こんにちは</h1>
+        <h1 class="hello">Ciao</h1>
+        <h1 class="hello">Salvē</h1>
+        <h1 class="hello">Bonjour</h1>
+        <h1 class="hello">coi</h1>
+        <h1 class="hello">Hallo</h1>
+        <h1 class="hello">Hej</h1>
+        <h1 class="hello">Hola</h1>
+        <h1 class="hello">안녕하세요</h1>
+        <h1 class="hello">Γεια σας</h1>
+        <h1 class="hello">Χαῖρε</h1>
+        <h1 class="hello">שלום</h1>
+        <h1 class="hello">Olá</h1>
+        <h1 class="hello">אַ גוטן טאָג</h1>
+        <h1 class="hello">Saluton</h1>
+        <h1 class="hello">ਸਤ ਸ੍ਰੀ ਅਕਾਲ</h1>
+        <h1 class="hello">Здравствуйте</h1>
+        <h1 class="hello">Živijo</h1>
+        <h1 class="hello">Ahoj</h1>
+        <h1 class="hello">မင္ဂလာပါ</h1>
+    </div>
+    <div class="main-content">
+        <h1>平等 | 自由</h1>
+        西湖文理学社是一个在诸多方面倡导平等与自由的学术共同体。
+        <h3>知识平等</h3>
+    </div>
+</body>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+  <script>
+    function randomValues() {
+        anime({
+          targets: '.hello',
+          translateX: function(){
+            return anime.random(-700, 700);
+          },
+          translateY: function(){
+            return anime.random(-300, 350);
+          },
+          opacity: function() {
+            let opac = Math.random();
+            if (Math.random() > 0.7) opac = 0;
+            else opac = opac + 0.05;
+            if (opac > 1) opac = 1;
+            return opac;
+          },
+          easing: 'easeInOutQuad',
+          duration: 800,
+          delay: 3000,
+          complete: randomValues
+        });
+      }
+      randomValues();
+  </script>
+
+</html>
